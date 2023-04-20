@@ -60,20 +60,189 @@
 //const player = ['toto', 100, true];
 
 //object
-const player = {
-  name: 'toto',
-  points: 100,
-  handsome: true,
-};
-console.log(player); // {name: 'toto', points: 100, handsome: true}
-console.log(player.name); // toto
-console.log(player['name']); // toto
+// const player = {
+//   name: 'toto',
+//   points: 100,
+//   handsome: true,
+// };
+// console.log(player); // {name: 'toto', points: 100, handsome: true}
+// console.log(player.name); // toto
+// console.log(player['name']); // toto
 
-// object 업데이트 가능
-console.log(player);
-player.points = player.points + 15;
-console.log(player.points); // 115
+// // object 업데이트 가능
+// console.log(player);
+// player.points = player.points + 15;
+// console.log(player.points); // 115
 
-//object 추가
-player.lastName = 'babo';
-console.log(player); // {name: 'toto', points: 115, handsome: false, lastName: 'babo'}
+// //object 추가
+// player.lastName = 'babo';
+// console.log(player); // {name: 'toto', points: 115, handsome: false, lastName: 'babo'}
+
+// 2.7-8 Functions
+
+// function sayHello(nameOfPerson, age) {
+//   console.log('Hello my name is ' + nameOfPerson + " and I'm " + age);
+// }
+
+// sayHello('toto', 13);
+// sayHello('hyunba', 29);
+// sayHello('hyechong', 27);
+
+// function plus(firstNum, secondNum) {
+//   console.log(firstNum + secondNum);
+// }
+
+// function divide(a, b) {
+//   console.log(a / b);
+// }
+
+// plus(8, 60);
+// divide(98, 20);
+
+// const player = {
+//   name: 'toto',
+//   sayHello: function (personName) {
+//     console.log('Hello ' + personName + '! nice to meet you~');
+//   },
+// };
+// console.log(player.name);
+// player.sayHello('lynn');
+
+// const calculator = {
+//   add: function (a, b) {
+//     console.log(a + b);
+//   },
+//   minus: function (a, b) {
+//     console.log(a - b);
+//   },
+//   divide: function (a, b) {
+//     console.log(a / b);
+//   },
+//   power: function (a, b) {
+//     console.log(a ** b);
+//   },
+// };
+
+// calculator.add(3, 5);
+// calculator.minus(10, 5);
+// calculator.divide(10, 2);
+// calculator.power(2, 3);
+
+// const age = 25;
+// function caculateKrAge(ageOfForeigner) {
+//   return ageOfForeigner + 2;
+// }
+
+// const krAge = caculateKrAge(age);
+
+// console.log(krAge);
+
+// 2.11 Returns
+// const calculator = {
+//   plus: function (a, b) {
+//     return a + b;
+//   },
+//   minus: function (a, b) {
+//     return a - b;
+//   },
+//   divide: function (a, b) {
+//     return a / b;
+//   },
+//   power: function (a, b) {
+//     return a ** b;
+//   },
+// };
+
+// const plusResult = calculator.plus(3, 5); // 8
+// const minusResult = calculator.minus(plusResult, 5); // 3
+// const divideResult = calculator.divide(9, minusResult); // 3
+// const powerResult = calculator.power(divideResult, minusResult); // 27
+
+// 2.13-15 Conditionals (조건문)
+
+// const age = prompt('How old are you?');
+
+// parseInt() // string 을 number로 바꿔주는 함수
+
+// console.log(typeof age); // string (default)
+// console.log(age, parseInt(age)); // string, number
+
+// const age = parseInt(prompt('How old are you?'));
+// //console.log(age); // number or NaN
+
+// // isNaN();// NotaNumber인지 판별해주는 함수 즉, number면 false, 아니면 true.
+
+// //console.log(isNaN(age));
+// if (isNaN(age) || age < 0) {
+//   console.log('Please write a real positive number');
+// } else if (age < 18) {
+//   console.log('You are too young');
+// } else if (age >= 18 && age <= 50) {
+//   console.log('You can drink');
+// } else if (age > 50 && age <= 80) {
+//   console.log('You should exercise');
+// } else if (age > 80) {
+//   console.log('You can do whatever you want');
+// }
+
+// && : and , || : or
+
+// 3.0 The Document Object
+// const title = document.getElementById('title');
+
+// // console.dir(title);
+// title.innerText = 'Got you!';
+
+// 3.2 Searching For Elements
+// const hellos = document.getElementsByClassName('hello');
+
+// console.log(hellos);
+
+// const title = document.getElementsByTagName('h1');
+// console.log(title);
+const h1 = document.querySelector('.hello h1');
+//console.log(title);
+
+// title.innerText = 'Hello';
+
+// 3.3 Events
+
+//console.dir(title);
+//title.style.color = 'blue';
+
+function handleTitleClick() {
+  h1.style.color = 'blue';
+}
+
+function handleTitleEnter() {
+  h1.innerText = 'Mouse is here!';
+}
+
+function handleTitleLeave() {
+  h1.innerText = 'Mouse is gone!';
+}
+
+function handleWindowResize() {
+  document.body.style.backgroundColor = 'tomato';
+}
+
+function handleWindowCopy() {
+  alert('copy cat!');
+}
+
+function handleWindowOffline() {
+  alert('SOS no WIFI');
+}
+
+function handleWindowOnline() {
+  alert('All gooood!');
+}
+
+h1.addEventListener('click', handleTitleClick);
+h1.addEventListener('mouseenter', handleTitleEnter);
+h1.addEventListener('mouseleave', handleTitleLeave);
+
+window.addEventListener('resize', handleWindowResize);
+window.addEventListener('copy', handleWindowCopy);
+window.addEventListener('offline', handleWindowOffline);
+window.addEventListener('online', handleWindowOnline);

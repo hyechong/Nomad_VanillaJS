@@ -200,7 +200,7 @@
 
 // const title = document.getElementsByTagName('h1');
 // console.log(title);
-const h1 = document.querySelector('.hello h1');
+// const h1 = document.querySelector('.hello h1');
 //console.log(title);
 
 // title.innerText = 'Hello';
@@ -210,39 +210,105 @@ const h1 = document.querySelector('.hello h1');
 //console.dir(title);
 //title.style.color = 'blue';
 
-function handleTitleClick() {
-  h1.style.color = 'blue';
-}
+// function handleTitleClick() {
 
-function handleTitleEnter() {
-  h1.innerText = 'Mouse is here!';
-}
+//   h1.style.color = 'blue';
+// }
 
-function handleTitleLeave() {
-  h1.innerText = 'Mouse is gone!';
-}
+// function handleTitleEnter() {
+//   h1.innerText = 'Mouse is here!';
+// }
 
-function handleWindowResize() {
-  document.body.style.backgroundColor = 'tomato';
-}
+// function handleTitleLeave() {
+//   h1.innerText = 'Mouse is gone!';
+// }
 
-function handleWindowCopy() {
-  alert('copy cat!');
-}
+// function handleWindowResize() {
+//   document.body.style.backgroundColor = 'tomato';
+// }
 
-function handleWindowOffline() {
-  alert('SOS no WIFI');
-}
+// function handleWindowCopy() {
+//   alert('copy cat!');
+// }
 
-function handleWindowOnline() {
-  alert('All gooood!');
-}
+// function handleWindowOffline() {
+//   alert('SOS no WIFI');
+// }
 
-h1.addEventListener('click', handleTitleClick);
-h1.addEventListener('mouseenter', handleTitleEnter);
-h1.addEventListener('mouseleave', handleTitleLeave);
+// function handleWindowOnline() {
+//   alert('All gooood!');
+// }
 
-window.addEventListener('resize', handleWindowResize);
-window.addEventListener('copy', handleWindowCopy);
-window.addEventListener('offline', handleWindowOffline);
-window.addEventListener('online', handleWindowOnline);
+// h1.addEventListener('click', handleTitleClick);
+// h1.addEventListener('mouseenter', handleTitleEnter);
+// h1.addEventListener('mouseleave', handleTitleLeave);
+
+// window.addEventListener('resize', handleWindowResize);
+// window.addEventListener('copy', handleWindowCopy);
+// window.addEventListener('offline', handleWindowOffline);
+// window.addEventListener('online', handleWindowOnline);
+
+// const h1 = document.querySelector('.hello h1');
+
+// function handleTitleClick() {
+//   const currentColor = h1.style.color;
+//   let newColor;
+//   if (currentColor === 'blue') {
+//     newColor = 'tomato';
+//   } else {
+//     newColor = 'blue';
+//   }
+//   h1.style.color = newColor;
+// }
+
+// h1.addEventListener('click', handleTitleClick);
+
+// 3.7 CSS in JS part 2
+// const h1 = document.querySelector('.hello h1');
+
+// function handleTitleClick() {
+//   const clickedClass = 'active';
+//   if (h1.className === clickedClass) {
+//     h1.className = '';
+//   } else {
+//     h1.className = clickedClass;
+//   }
+// }
+
+// h1.addEventListener('click', handleTitleClick);
+
+// 3.8 CSS in JS part 3
+// const h1 = document.querySelector('.hello h1');
+
+// function handleTitleClick() {
+//   // const clickedClass = 'active';
+//   // if (h1.classList.contains(clickedClass)) {
+//   //   h1.classList.remove(clickedClass);
+//   // } else {
+//   //   h1.classList.add(clickedClass);
+//   // } // toggle 함수가 같은 역할을 해준다.
+//   h1.classList.toggle('active');
+// }
+
+// h1.addEventListener('click', handleTitleClick);
+
+// 5일차 과제
+// const bgColor = document.querySelector('.yellow');
+
+// function changeColor() {
+//   if (window.innerWidth >= 800) {
+//     bgColor.classList.remove('purple');
+//     bgColor.classList.remove('blue');
+//     bgColor.classList.add('yellow');
+//   } else if (window.innerWidth <= 800 && window.innerWidth >= 600) {
+//     bgColor.classList.remove('blue');
+//     bgColor.classList.remove('yellow');
+//     bgColor.classList.add('purple');
+//   } else if (window.innerWidth <= 600) {
+//     bgColor.classList.remove('purple');
+//     bgColor.classList.remove('yellow');
+//     bgColor.classList.add('blue');
+//   }
+// }
+
+// window.addEventListener('resize', changeColor);
